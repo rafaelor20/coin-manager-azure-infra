@@ -10,7 +10,7 @@ variable "location" {
 }
 
 variable "vm_name" {
-  default = "avantiproject-vm"
+  default     = "avantiproject-vm"
   description = "The name of the virtual machine"
   type        = string
 }
@@ -38,11 +38,11 @@ variable "admin_password" {
   sensitive   = true
 }
 
-variable "ssh_public_key" {
-  description = "The SSH public key for the virtual machine"
+variable "ssh_public_key_path" {
   type        = string
+  description = "Caminho completo para a chave pública SSH"
+  default     = "~/.ssh/id_rsa.pub"
 }
-
 variable "address_space" {
   description = "The address space for the virtual network"
   type        = string
@@ -73,7 +73,7 @@ variable "image_publisher" {
 variable "image_offer" {
   description = "The offer of the image to use for the virtual machine"
   type        = string
-  default     = "UbuntuServer" # Replace with the desired default value
+  default     = "UbuntuServer"
 }
 
 variable "image_sku" {
@@ -82,7 +82,7 @@ variable "image_sku" {
 }
 
 variable "virtual_network_name" {
-  default = "vmlinuxserver-vnet"
+  default     = "vmlinuxserver-vnet"
   description = "The name of the virtual network"
   type        = string
 }

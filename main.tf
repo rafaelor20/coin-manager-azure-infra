@@ -53,21 +53,21 @@ resource "azurerm_linux_virtual_machine" "vm" {
     azurerm_network_interface.nic.id,
   ]
 
+  admin_ssh_key {
+    username   = var.admin_username
+    # The public key file path should be absolute or relative to the current working directory
+    public_key = file(pathexpand(var.ssh_public_key_path))
+  }
 
   os_disk {
-    storage_account_type = "Standard_LRS"
-    disk_size_gb        = 30
     caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
   }
 
   source_image_reference {
-    publisher = var.image_publisher
-    offer     = var.image_offer
-    sku       = var.image_sku
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
     version   = "latest"
   }
-}
-
-output "public_ip_address" {
-  value = azurerm_linux_virtual_machine.vm.public_ip_address
 }

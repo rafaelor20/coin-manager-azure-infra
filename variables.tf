@@ -1,5 +1,5 @@
 variable "resource_group_name" {
-  description = "avanti-bootcamp"
+  description = "avt-bootcamp"
   type        = string
 }
 
@@ -10,7 +10,7 @@ variable "location" {
 }
 
 variable "vm_name" {
-  default     = "avantiproject-vm"
+  default     = "demoproject-vm"
   description = "The name of the virtual machine"
   type        = string
 }
@@ -18,7 +18,7 @@ variable "vm_name" {
 variable "vm_size" {
   description = "The size of the virtual machine"
   type        = string
-  default     = "Standard_DS1_v2"
+  default     = "Standard_D2s_v3"
 }
 
 variable "vm_image" {
@@ -41,8 +41,9 @@ variable "admin_password" {
 variable "ssh_public_key_path" {
   type        = string
   description = "Caminho completo para a chave pública SSH"
-  default     = "~/.ssh/id_rsa.pub"
+  default     = "C:/Users/elizeu.ribeiro/.ssh/id_rsa.pub"
 }
+
 variable "address_space" {
   description = "The address space for the virtual network"
   type        = string

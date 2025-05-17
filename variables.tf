@@ -41,7 +41,7 @@ variable "admin_password" {
 variable "ssh_public_key_path" {
   type        = string
   description = "Caminho completo para a chave pública SSH"
-  default     = "C:/Users/elizeu.ribeiro/.ssh/id_rsa.pub"
+  default     = "/home/rafael/.ssh/id_rsa.pub"
 }
 
 variable "address_space" {

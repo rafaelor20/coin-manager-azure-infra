@@ -1,5 +1,5 @@
 variable "resource_group_name" {
-  description = "avt-bootcamp"
+  description = "coin-manager-infra"
   type        = string
 }
 
@@ -10,7 +10,7 @@ variable "location" {
 }
 
 variable "vm_name" {
-  default     = "demoproject-vm"
+  default     = "coin-manager-vm"
   description = "The name of the virtual machine"
   type        = string
 }

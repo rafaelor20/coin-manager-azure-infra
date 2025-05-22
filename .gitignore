@@ -1,6 +1,6 @@
 # Diretório local do Terraform
 .terraform/
-
+*.tfvars 
 # Arquivos de estado
 terraform.tfstate
 terraform.tfstate.backup
